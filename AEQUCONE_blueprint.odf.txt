@@ -1,0 +1,1150 @@
+════════════════════════════════════════════════════════════════════════════════════════════════════
+AEQUCONE v0.1 │ AXISYMMETRIC SHELL FRAMEWORK + AEQUBASE FOUNDATION KIT
+OPTIBEST / EFE concept-stage blueprint │ foundation-first │ shell-agnostic │ schematic, plan, design
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Version   : 0.1                                      Status    : CONCEPT PLATEAU (conditional)
+Date      : 2026-10-10                               Rigor     : MACRO
+Project   : AEQUCHAIN / EFE                          Scale     : Global; household-community units
+Companion : AEQUCONE_drawing_set.pdf (3 sheets) │ model + builder scripts │ results.json
+────────────────────────────────────────────────────────────────────────────────────────────────────
+NOT A STAMPED STRUCTURAL DESIGN. Concept-stage engineering: every item marked [A] is an assumption
+that is a verification gate (section 9.6). No shelter or "tornado-proof" claim is made or implied.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+TABLE OF CONTENTS
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+    1. Executive Summary ................................................................... [1]
+    2. Technical Specifications ............................................................ [2]
+    3. System Architecture ................................................................. [3]
+    4. Detailed Drawings ................................................................... [4]
+    5. Manufacturing Specification ......................................................... [5]
+    6. Materials Specification ............................................................. [6]
+    7. Lifecycle Documentation ............................................................. [7]
+    8. Scale Planning ...................................................................... [8]
+    9. OPTIBEST Verification Report ........................................................ [9]
+    10. Certification (scoped) ............................................................. [10]
+    APPENDIX A: Calculation basis (checkable) .............................................. [A]
+    APPENDIX B: Visual prompts (T1/T2/T3) .................................................. [B]
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+1. EXECUTIVE SUMMARY
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+1.1 Purpose statement
+
+╔═ PURPOSE ═════════════════════════════════════════════════════════════════════════════════════════
+║
+║  Define ONE parametric, scale-invariant, material-tier-agnostic construction framework in which an
+║  axisymmetric shell sits on a standardised, mass-producible, demountable ring foundation
+║  (AEQUBASE), so the same load path serves a 5 m entry shelter and a 30 m community hall, in entry
+║  or premium materials, with safety designed foundation-first. Optimal-across-all elements are
+║  fixed as invariants; conditional elements are switched by hazard, ground and tier.
+║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════
+
+1.2 Answers to the questions asked
+
+┌─ Q1  IS CONICAL BEST?  PARTLY - AND THE PURE STEEP CONE IS NOT ───────────────────────────────────
+│
+│  • TRUE: any body of revolution (cone, dome, drum) loads identically from every bearing; no
+│    "front". Same D and H, a cone takes 50% of the base shear and 33% of the overturning moment of
+│    a drum (checked analytically: 1/2 and 1/3 for uniform pressure). A cone is a developable
+│    surface: flat-sheet or flat-facet manufacture, no double-curved moulds.
+│  • FALSE as pictured: at EQUAL USABLE FLOOR (40 m2, 2.1 m headroom) a pure 60 deg cone costs +94%
+│    moment, +167% hold-down and +39% shell area compared with a 45 deg conical roof on a 2.1 m knee
+│    wall (M 436 vs 225 kN.m; hold-down 261 vs 98 kN). Height costs moment; the perimeter of a pure
+│    cone is unusable.
+│  • The dome is a real rival (lower moment: 108 kN.m). Cone-on-knee beats it in 10 of 12 aero-
+│    assumption cases (uniform weights) and 7 of 12 under safety weights, so the shell choice is
+│    decided by wind-tunnel gate V1. The FOUNDATION is identical either way: that is the invariant.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+┌─ Q2  HOW SHOULD FOUNDATIONS BE LAID? ─────────────────────────────────────────────────────────────
+│
+│  Not as a cast raft. Lay a RING of identical steel segments (chord 2.000 m) on screw anchors
+│  driven to a logged torque, one anchor per node, with a continuous skirt fin. The ring is the
+│  tension tie for the shell, the hold-down distributor and the sliding key in one part. Sequence:
+│  site gate > set out > drive anchors (torque-logged) > set segments > close and torque ring >
+│  skirt + compacted backfill > erect shell. About 8 working hours for the 7.7 m reference unit,
+│  loadable immediately (no cure time).
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+┌─ Q3  HOW ENHANCED?  (measured deltas, section 9.3) ───────────────────────────────────────────────
+│
+│  • Ring + anchors vs cast raft: foundation mass 34.3 t -> 1.88 t (5.5% of raft); embodied CO2e 5.8
+│    t -> 1.1 t (recycled steel) or 3.6 t (virgin steel) - indicative factors [A].
+│  • Constant-chord n-gon segment: 6 tooling sets -> 1; one segment section covers n = 8..48 and
+│    WC1..WC4.
+│  • Torque-as-proof: every anchor is load-qualified by its installation torque (Qult = Kt x T), so
+│    QA is built into mass production.
+│  • Capacity design: anchors carry >= 3x the computed demand on the reference unit; the foundation
+│    outlasts the shell by design.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+┌─ Q4  CAN FOUNDATIONS OF CONICAL STRUCTURES BE MASS PRODUCED?  YES ────────────────────────────────
+│
+│  • One segment (RHS 150x100x6 x 2.0 m, 57 kg) and one anchor ladder (A1 60 | A2 100 | A3 150 | A4
+│    250 kN) cover every size in the ladder. Ring diameter is set only by the NUMBER of segments: D
+│    = 2.0 / sin(180/n).
+│  • Precast radial-rib wind-turbine foundations exist but sit in active patent families (section
+│    9.8); AEQUBASE is deliberately a different architecture (ring + screw anchors + skirt, any
+│    material) pending a freedom-to-operate review.
+│  • Spun-cast concrete suits tubes and piles, not 45 deg shells: rejected for the shell, kept as an
+│    option for a central core tube.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+┌─ Q5  HEIGHT BELOW / ABOVE GROUND ─────────────────────────────────────────────────────────────────
+│
+│  • Above: ring top +0.15 m over grade (splash, drainage). Apex 5.98 m (H/D = 0.77). Taller costs
+│    moment roughly with H squared; do not exceed the 45 deg family.
+│  • Below: skirt 0.42-1.04 m by wind class; anchors >= 3.0 m (>= 12 helix diameters). Habitable
+│    sub-grade core cell only if the design water table is >= 1.5 m below floor (weight/buoyancy
+│    1.33 at 1.5 m; 0.91 at 1.0 m = floats).
+│  • Berm to knee height (2.1 m): base shear 48% and moment 75% of unbermed; adds drainage and
+│    moisture duties.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+1.3 Key specifications (reference unit R-12, WC4)
+
+┌─ KEY SPECIFICATIONS ─────────────────────────────────────────────────────────────────────────────
+│
+│  Parameter                │ Value                                   │ Basis
+│  ─────────────────────────┼─────────────────────────────────────────┼─────────────────────────────
+│  Ring / nodes             │ 12 segments, chord 2.000 m, 12 nodes    │ n-gon, D = 2.0 / sin(180/n)
+│  Diameter (nodes / flats) │ 7.73 m / 7.46 m                         │ model
+│  Shell                    │ 12 wall + 12 roof flat facets, 45 deg   │ section 2.4
+│                           │ roof on 2.1 m knee                      │
+│  Apex above grade         │ 5.98 m (faceted); 6.11 m circumscribed- │ ring top +0.15
+│                           │ cone model                              │
+│  Design wind              │ 250 mph = 111.8 m/s 3-s gust (WC4), ICC │ FEMA P-361 / ICC 500 basis
+│                           │ 500 GCpi +/-0.55                        │
+│  Wind demand              │ F 122 kN | M 264 kN.m | breach uplift   │ Cf 0.6, CL 0.25 [A]
+│                           │ 258 kN                                  │
+│  Shell weight             │ 230 kN (200 kg/m2 [A])                  │ T1 ferrocement-class
+│  Anchor demand            │ T = 14.8 kN/node; Qreq 17.7 kN -> class │ x1.2 = ASD FS2 with 0.6W
+│                           │ A1 60 kN                                │
+│  Install torque           │ >= 2.6 kN.m per anchor (Kt 23 1/m [A])  │ log every anchor
+│  Skirt fin                │ 4 mm x 2.0 m x 1.04 m                   │ passive, phi 32 gamma 18 [A]
+│  Foundation steel         │ 1.88 t (48% skirt, 36% segments, 13%    │ section 6.1
+│                           │ anchors)                                │
+│  Install time             │ 8 h, 3-person crew                      │ section 5.5 [A]
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+1.4 EFE compliance (honest status per principle)
+
+Principle   │ Status        │ Evidence and caveat
+────────────┼───────────────┼───────────────────────────────────────────────────────────────────────
+Sustainable │ PASS (cond.)  │ CO2e 19-61% of a cast raft; NOT carbon-negative at embodied stage
+Renewable   │ PARTIAL       │ Foundation is metal: indefinitely cyclable, not grown. Shell tiers
+            │               │ offer timber/bamboo/earth
+Accessible  │ PASS (cond.)  │ Commodity RHS + screw anchors; small units need no heavy plant [A];
+            │               │ fallback ballast ring for WC1
+Open        │ PASS (cond.)  │ Generic geometry; patent landscape mapped (9.8); freedom-to-operate
+            │               │ review is gate V5
+Local-first │ PASS          │ Any steel workshop makes P1/P3/P4; screw anchors regional; shell tier
+            │               │ by local material
+Circular    │ PASS (target) │ >= 90% of foundation mass recoverable by unscrewing/unbolting; field
+            │               │ trials gate V8
+Durable     │ CONDITIONAL   │ 50-yr design life needs coating + corrosion allowance per soil
+            │               │ corrosivity class; gate V4
+
+1.5 Scale pathway
+
+Stage        │ Scope                             │ Duration [A] │ Exit criterion
+─────────────┼───────────────────────────────────┼──────────────┼───────────────────────────────────
+P0 bench     │ node + anchor + segment tests     │ 8-12 weeks   │ V2/V3 pass: torque-capacity, node
+             │                                   │              │ proof load
+P1 full unit │ one R-12, instrumented, 1 site    │ 4-6 months   │ V1 wind-tunnel/CFD closed;
+             │                                   │              │ measured vs model
+P2 pilot     │ 10 units, 3 ground types          │ 9-12 months  │ install <= 1 day; zero rework;
+             │                                   │              │ V4/V8 data
+P3 series    │ 100-1,000 units, 3 fabrication    │ 12-24 months │ kit cost and QA yield stable
+             │ nodes                             │              │
+P4 mass      │ 10,000+ units, regional nodes     │ 3-5 years    │ open drawings + local
+             │                                   │              │ certification routes
+
+1.6 Certification summary (scoped)
+
+Concept plateau reached within model fidelity: 7 enhancement attempts produced no unconditional gain
+above the 10% model-noise floor, one conditional vector is logged (APC-vented lantern), and 9
+external gates are open. The PREMIUM stamp is deliberately NOT applied: it would assert more than
+the evidence supports. See section 10.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+2. TECHNICAL SPECIFICATIONS
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+2.1 Invariants vs conditionals (what is optimal everywhere, what depends)
+
+Class        │ Element                                   │ Rule
+─────────────┼───────────────────────────────────────────┼──────────────────────────────────────────
+INVARIANT    │ Axisymmetric plan, n >= 8                 │ rotational symmetry; any bearing, same
+             │                                           │ load path
+INVARIANT    │ Constant-chord ring segment               │ chord 2.000 m; size = number of segments
+INVARIANT    │ Continuous load path                      │ hip rib > shoe > node block > anchor
+             │                                           │ sleeve > anchor
+INVARIANT    │ Torque-logged anchors, 1 per node min     │ robustness even if computed demand is
+             │                                           │ zero
+INVARIANT    │ Capacity design                           │ foundation resistance >= 1.25 x shell
+             │                                           │ yield; sacrificial cladding fails first
+INVARIANT    │ Demountable, no concrete in ground        │ bolted ring, unscrewable anchors
+CONDITIONAL  │ Wind class WC1..WC4                       │ sets skirt depth, anchor class, section
+             │                                           │ check
+CONDITIONAL  │ Ground switch                             │ screw anchors | rock anchors | ballast
+             │                                           │ ring (WC1-2 only)
+CONDITIONAL  │ Shell shape                               │ 45 deg cone-on-knee (default) | dome |
+             │                                           │ rolled true cone
+CONDITIONAL  │ Material tier T1/T2/T3                    │ same interfaces, performance classes
+             │                                           │ (section 3.4)
+NICE-TO-HAVE │ Core cell, berm, APC-vented lantern, hub- │ enabled by site; never required by the
+             │ and-spoke                                 │ kit
+
+2.2 Reference unit R-12
+
+╔═ SPECIFICATION - R-12 ════════════════════════════════════════════════════════════════════════════
+║
+║  Ring            : 12 x RHS 150x100x6, chord 2.000 m, circumradius 3.864 m, apothem 3.732 m
+║  Floor           : 44.8 m2 polygon, all >= 2.1 m clear (knee wall 2.1 m)
+║  Shell           : facets: 12 wall panels 2.0 x 2.1 m + 12 roof triangles at 45 deg; apex cap
+║  Foundation      : 12 anchors A1 (60 kN), skirt fin 1.04 m, ring top +0.15 m above grade
+║  Loads (WC4)     : F 122 kN, M 264 kN.m, uplift 258 kN (breach), shell 230 kN
+║  Segment check   : Mseg 3.7 vs 35.6 kN.m cap (RHS 150x100x6); ring thrust 21 vs 785 kN
+║  CRITICAL: concept-stage values. Node, shell and connection design are gate V3.
+║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════
+
+2.3 Shape study: equal function (40 m2 usable floor, 2.1 m headroom, 250 mph, breach case)
+
+Architecture           │ D m │ H m │ S/Au │ F kN │ M kN.m │ Uplift │ Hold-down │ Impact
+───────────────────────┼─────┼─────┼──────┼──────┼────────┼────────┼───────────┼───────
+Box+flat roof          │ 6.3 │ 2.7 │ 2.71 │ 156  │ 211    │ 325    │ 201       │ 1.00
+Drum+flat roof         │ 7.1 │ 2.7 │ 2.51 │ 75   │ 101    │ 325    │ 176       │ 0.67
+Hemisphere dome        │ 8.3 │ 4.1 │ 2.69 │ 61   │ 108    │ 367    │ 203       │ 0.50
+Cone 60deg             │ 9.6 │ 8.3 │ 3.59 │ 156  │ 436    │ 423    │ 261       │ 0.50
+Cone 60deg + 1.5m knee │ 7.8 │ 8.3 │ 3.33 │ 151  │ 433    │ 284    │ 159       │ 0.55
+Cone 45deg + 2.1m knee │ 7.1 │ 5.7 │ 2.59 │ 108  │ 225    │ 218    │ 98        │ 0.51
+
+S/Au = shell area per usable floor area (material, cost, carbon proxy). Hold-down = uplift + M/lever
+- 0.9 x shell weight (kN the foundation must supply). Impact = mean normal-impact energy fraction of
+a horizontal missile (1.0 = face-on); curvature and slope help in reality but ICC 500 tests are
+normal-incidence, so no code credit is claimed.
+
+Architecture           │ Wins, uniform weights │ Wins, safety-weighted
+───────────────────────┼───────────────────────┼──────────────────────
+Box+flat roof          │ 0.0%                  │ 0.0%
+Drum+flat roof         │ 1.9%                  │ 0.3%
+Hemisphere dome        │ 23.0%                 │ 16.6%
+Cone 60deg             │ 0.9%                  │ 0.1%
+Cone 60deg + 1.5m knee │ 0.0%                  │ 0.0%
+Cone 45deg + 2.1m knee │ 74.2%                 │ 83.0%
+
+Weights were sampled (20,000 Dirichlet draws), not chosen. Pareto: "Cone 60deg + 1.5m knee" is
+dominated by the 45 deg / 2.1 m knee. ASSUMPTION FLIP TEST: varying cone lift CL 0.25-0.50, cone Cf
+0.6-0.8 and dome CL 0.3-0.7 (12 cases), the cone-on-knee beats the dome in 10 (uniform) and 7
+(safety-weighted) of 12. The dome wins only when the cone is aerodynamically pessimistic. Scoring of
+fabrication (developable = 1.0, dome = 0.5) and membrane efficiency are judgments, not measurements.
+
+2.4 Cone-family optimum (equal usable floor)
+
+Roof deg │ M pure │ HD pure │ S/Au pure │ M +2.1m knee │ HD +2.1m knee │ S/Au +2.1m │ H m
+─────────┼────────┼─────────┼───────────┼──────────────┼───────────────┼────────────┼─────
+40       │ 205    │ 383     │ 3.78      │ 190          │ 91            │ 2.48       │ 5.1
+45       │ 237    │ 339     │ 3.57      │ 225          │ 98            │ 2.59       │ 5.7
+50       │ 281    │ 305     │ 3.47      │ 271          │ 106           │ 2.73       │ 6.4
+55       │ 343    │ 279     │ 3.48      │ 335          │ 116           │ 2.92       │ 7.2
+60       │ 436    │ 261     │ 3.59      │ 429          │ 131           │ 3.18       │ 8.3
+70       │ 853    │ 267     │ 4.31      │ 849          │ 203           │ 4.10       │ 11.9
+75       │ 1421   │ 338     │ 5.18      │ 1418         │ 310           │ 5.04       │ 15.4
+
+DECISION: nominal 45 deg on a 2.1 m knee wall; window 40-50 deg. 40 deg is slightly better on paper
+(about -7% hold-down, -10% height) but inside the model noise floor, and it sits where suction rises
+and wind-tunnel data thin out (grain-bin cone roofs and a 30 deg CFD case show strong local
+suction). Moment grows steeply above 55 deg: the intuitive tall cone is the wrong end of this curve.
+
+2.5 Wind classes and load basis
+
+┌─ WIND CLASSES ───────────────────────────────────────────────────────────────────────────────────
+│
+│  Class │ Design 3-s gust     │ Use                        │ Note
+│  ──────┼─────────────────────┼────────────────────────────┼───────────────────────────────────────
+│  WC1   │ 45 m/s (~100 mph)   │ gale zones                 │ ballast ring may replace anchors (low
+│        │                     │                            │ uplift) [A]
+│  WC2   │ 60 m/s (~134 mph)   │ strong storm               │ screw anchors, shallow skirt
+│  WC3   │ 80 m/s (~179 mph)   │ cyclone / severe           │ screw anchors, mid skirt
+│  WC4   │ 111.8 m/s (250 mph) │ ICC 500 / FEMA P-361 basis │ foundation capacity only; shelter
+│        │                     │                            │ claim needs tested envelope
+│
+│  Basis: ASCE 7 Exposure C profile Kz = 2.01 (z/274.3)^(2/9.5), q = 0.613 Kz V^2, Kd = Kzt = Ke =
+│  1. Round-structure Cf 0.5-0.6 (supercritical, moderately smooth) bracketed 0.5-0.8 for rough
+│  surfaces. ASCE 7-22 Chapter 32 tornado provisions target Risk Cat III/IV at about EF2 or less;
+│  the 250 mph basis is the ICC 500 / FEMA P-361 shelter figure.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+R-12 │ F kN │ M kN.m │ Uplift kN │ T/node kN │ Qreq kN │ Anchor │ Skirt m │ Steel t
+─────┼──────┼────────┼───────────┼───────────┼─────────┼────────┼─────────┼────────
+WC1  │ 20   │ 43     │ 42        │ 0.0       │ 0.0     │ A1 60  │ 0.42    │ 1.34
+WC2  │ 35   │ 76     │ 74        │ 0.0       │ 0.0     │ A1 60  │ 0.56    │ 1.46
+WC3  │ 62   │ 136    │ 132       │ 0.0       │ 0.0     │ A1 60  │ 0.74    │ 1.63
+WC4  │ 122  │ 264    │ 258       │ 14.8      │ 17.7    │ A1 60  │ 1.04    │ 1.88
+
+┌─ ASSUMPTIONS [A] - EACH IS A VERIFICATION GATE ───────────────────────────────────────────────────
+│
+│  [A1] Cone-on-knee Cf 0.6 (0.5-0.8) and external lift CL 0.25 (0.05-0.5); breach internal pressure
+│       +0.55 (ICC 500, partially enclosed). Gate V1.
+│  [A2] Shell areal mass 200 kg/m2 (T1). Lighter tiers raise anchor demand: sensitivity in 9.5. Gate
+│       V3.
+│  [A3] Soil: dense granular, phi 32 deg, gamma 18 kN/m3; passive mobilisation factor 0.5. Gate V2.
+│  [A4] Anchor Kt = 23 1/m (conservative end of published 23-33); depth >= 12 helix diameters for
+│       tension correlation. Gate V2.
+│  [A5] Embodied carbon factors: concrete 0.13 kgCO2e/kg + rebar; recycled steel 0.6, virgin steel
+│       1.9 kgCO2e/kg (indicative). Gate: EPDs.
+│  [A6] Loads computed on the circumscribed circular frustum (conservative wind area; self-weight
+│       within the sampled +/-15%).
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+2.6 Foundation sizing ladder (WC4, breach case) - one segment, six sizes
+
+n  │ D m  │ H m │ Floor │ T kN │ Qreq │ Anchor │ Torq │ Mseg │ Skirt │ Steel │ Inst h
+───┼──────┼─────┼───────┼──────┼──────┼────────┼──────┼──────┼───────┼───────┼───────
+8  │ 5.2  │ 4.7 │ 19    │ 11   │ 13   │ A1 60  │ 2.6  │ 3.3  │ 0.95  │ 1.20  │ 6
+12 │ 7.7  │ 6.0 │ 45    │ 15   │ 18   │ A1 60  │ 2.6  │ 3.7  │ 1.04  │ 1.88  │ 8
+16 │ 10.3 │ 7.2 │ 80    │ 20   │ 24   │ A1 60  │ 2.6  │ 5.0  │ 1.12  │ 2.60  │ 10
+24 │ 15.3 │ 7.5 │ 182   │ 31   │ 37   │ A1 60  │ 2.6  │ 7.8  │ 1.23  │ 4.09  │ 14
+36 │ 22.9 │ 7.8 │ 411   │ 51   │ 62   │ A2 100 │ 4.3  │ 12.9 │ 1.32  │ 6.66  │ 20
+48 │ 30.6 │ 8.2 │ 732   │ 75   │ 90   │ A2 100 │ 4.3  │ 18.7 │ 1.38  │ 9.10  │ 26
+
+Floor = m2 | T = anchor tension per node (kN) | Qreq (kN) | Torq = install torque (kN.m) | Mseg
+(kN.m) | Skirt (m) | Steel (t) | Inst = install hours
+
+All sizes and all wind classes use ONE segment section: the worst segment moment in the ladder is
+18.7 kN.m against 35.6 kN.m design capacity (0.9 Mp, RHS 150x100x6). n >= 24 use a truncated vented
+lantern (r_top/R = 0.3, 0.5, 0.6) so apex height stays 7-8 m. Anchor demand is small because the
+shell dead weight offsets most breach uplift; a lighter shell moves demand up the anchor ladder, not
+off it:
+
+n  │ Shell kg/m2 │ Shell kN │ T kN/node │ Qreq kN │ Anchor class
+───┼─────────────┼──────────┼───────────┼─────────┼─────────────
+12 │ 50          │ 58       │ 28        │ 33      │ A1 60
+12 │ 100         │ 115      │ 23        │ 28      │ A1 60
+12 │ 150         │ 173      │ 19        │ 23      │ A1 60
+12 │ 200         │ 230      │ 15        │ 18      │ A1 60
+12 │ 300         │ 345      │ 6         │ 7       │ A1 60
+48 │ 50          │ 555      │ 106       │ 127     │ A3 150
+48 │ 100         │ 1109     │ 95        │ 115     │ A3 150
+48 │ 150         │ 1664     │ 85        │ 102     │ A3 150
+48 │ 200         │ 2219     │ 75        │ 90      │ A2 100
+48 │ 300         │ 3328     │ 54        │ 65      │ A2 100
+
+2.7 Ground switch (conditional element)
+
+Ground                            │ Variant                     │ Rule
+──────────────────────────────────┼─────────────────────────────┼───────────────────────────────────
+Medium-dense granular, stiff clay │ F-S screw anchors (default) │ torque-logged; embed >= 12 helix
+                                  │                             │ dia; load test 2% min
+Loose / soft / possibly           │ F-S through weak layer      │ anchor tips in competent stratum;
+liquefiable                       │                             │ liquefaction check (gate V6)
+Rock within ~1.5 m                │ F-R grouted rock anchors    │ same node sleeve; skirt replaced
+                                  │                             │ by shear keys
+Cobbles, boulders, rubble fill    │ pre-drill or F-R            │ refusal logged; never accept a
+                                  │                             │ short anchor silently
+Expansive clay                    │ F-S below active zone       │ void former under floor; skirt
+                                  │                             │ isolated from heave
+High water table                  │ F-S, no sub-grade cell      │ buoyant unit weight in capacity;
+                                  │                             │ corrosion class raised
+No plant / obstructed, WC1 only   │ F-B ballast trench ring     │ gravel-filled trench round ring;
+                                  │                             │ sliding by skirt [A]
+
+2.8 Height, embedment, berm and flotation rules
+
+n (skirt depth, m) │ WC1  │ WC2  │ WC3  │ WC4
+───────────────────┼──────┼──────┼──────┼─────
+8                  │ 0.38 │ 0.51 │ 0.68 │ 0.95
+12                 │ 0.42 │ 0.56 │ 0.74 │ 1.04
+16                 │ 0.45 │ 0.60 │ 0.80 │ 1.12
+24                 │ 0.49 │ 0.66 │ 0.88 │ 1.23
+36                 │ 0.53 │ 0.71 │ 0.94 │ 1.32
+48                 │ 0.56 │ 0.74 │ 0.99 │ 1.38
+
+Berm to height m │ Base shear % │ Moment %
+─────────────────┼──────────────┼─────────
+0.0              │ 100          │ 100
+0.5              │ 88           │ 99
+1.0              │ 75           │ 94
+1.5              │ 63           │ 87
+2.0              │ 51           │ 77
+2.1              │ 48           │ 75
+3.0              │ 28           │ 52
+
+Water table below floor m │ Core cell weight kN │ Buoyancy kN │ Weight/buoyancy
+──────────────────────────┼─────────────────────┼─────────────┼────────────────
+0.0                       │ 122                 │ 218         │ 0.56
+0.5                       │ 122                 │ 176         │ 0.70
+1.0                       │ 122                 │ 134         │ 0.91
+1.5                       │ 122                 │ 92          │ 1.33
+2.0                       │ 122                 │ 50          │ 2.43
+3.0                       │ 122                 │ 0           │ n/a
+
+┌─ RULES ───────────────────────────────────────────────────────────────────────────────────────────
+│
+│  • Ring top = FFL = +0.15 m above external grade. Nothing habitable lower than the flotation rule
+│    allows; minimum margin 1.1 on weight/buoyancy.
+│  • Core cell D3.0 x 2.4 m only where margin >= 1.1 with the SITE water table (design, not seasonal
+│    low). Otherwise add tension anchors for the buoyant surplus.
+│  • Berm slope toe >= 1.5 x berm height from the wall; drainage and damp-proofing are the price of
+│    the berm.
+│  • Apex height capped by the family (H/D about 0.77 at n = 12; lantern truncation above that).
+│    Height is paid for in moment.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+2.9 Tolerances and acceptance (concept values [A])
+
+Feature                      │ Tolerance                         │ Check
+─────────────────────────────┼───────────────────────────────────┼──────────────────────────────────
+Node radial position         │ +/-10 mm                          │ string or total station from
+                             │                                   │ centre peg
+Anchor plumb / position      │ +/-2 deg / +/-25 mm               │ inclinometer at start of drive
+Ring level over any 2 m      │ +/-3 mm; whole ring +/-8 mm       │ laser level, shims P4
+Segment chord length         │ 2000 +/-2 mm                      │ jig
+Node block bore / bolt pitch │ +/-0.5 mm                         │ go/no-go gauge
+Installed torque             │ >= specified (class Qult / 23)    │ logged, tagged; reject if below
+Skirt verticality / backfill │ +/-1 deg; compaction in 200 mm    │ plate test at 3 points
+                             │ lifts                             │
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+3. SYSTEM ARCHITECTURE
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+3.1 Module architecture
+
+┌─ MODULES ─────────────────────────────────────────────────────────────────────────────────────────
+│
+│    ┌─────────────┐
+│    │  SITE GATE  │   geotech │ corrosivity │ water table │ wind class │ code and licensed engineer
+│    └──────┬──────┘
+│           ▼
+│    ┌──────────────────────────────────────────────────────────────┐
+│    │ AEQUBASE  invariant │ mass-produced │ demountable            │
+│    │ P1 ring segments ─ P2 screw anchors ─ P3 skirt fin ─ P4 set  │
+│    └───────────────────────────────┬──────────────────────────────┘
+│                                    │ NODE INTERFACE (12 hip shoes, M20 pattern, rated N60..N250)
+│                                    ▼
+│    ┌──────────────────────────────────────────────────────────────┐
+│    │ SHELL MODULE  conditional: tier │ shape │ local material     │
+│    │ 45 deg cone-on-knee (default) │ dome │ rolled true cone      │
+│    └───────────────────────────────┬──────────────────────────────┘
+│                                    ▼
+│     ┌────────────────┐   ┌────────────────────┐   ┌───────────────────────┐
+│     │ OPENINGS       │   │ ENVELOPE / SKIN    │   │ SERVICES, CORE CELL   │
+│     │ framed, rated  │   │ replaceable        │   │ optional              │
+│     └────────────────┘   └────────────────────┘   └───────────────────────┘
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+3.2 Load path and failure order
+
+┌─ LOAD PATH (every wind bearing identical) ────────────────────────────────────────────────────────
+│
+│    wind (any bearing) ─► facets ─► hip ribs (12) ─► hip shoes ─► NODE BLOCKS ─► anchor sleeves
+│                                                                           └─► anchors ─► ground
+│    breach uplift      ─► same chain, in tension
+│    overturning M      ─► node loads T / N varying as cos(theta) around the ring
+│    base shear F       ─► ring (diaphragm) ─► skirt fin ─► passive soil
+│    shell thrust       ─► ring tension 21 kN against 785 kN section capacity (2.6% used)
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+Order │ Element                    │ Intended behaviour (capacity design, each stage >= 1.25 x
+      │                            │ previous [A])
+──────┼────────────────────────────┼────────────────────────────────────────────────────────────────
+1     │ Skin / cladding / seals    │ sacrificial, replaceable; fails first, vents pressure
+2     │ Shell fasteners            │ ductile; fail before panels
+3     │ Shell panels, hip ribs     │ designed to yield, not shatter
+4     │ Hip shoes, node bolts      │ over-strength to ribs
+5     │ Ring segments, node blocks │ stay elastic at shell yield
+6     │ Anchors, skirt (last)      │ resist >= 3x computed demand on R-12; foundation outlives shell
+
+3.3 Node interface (the invariant that makes tiers interchangeable)
+
+Parameter         │ Value [A]                              │ Note
+──────────────────┼────────────────────────────────────────┼────────────────────────────────────────
+Node block        │ 260 x 260 x 12 mm plate box, sleeve    │ one part number, all sizes
+                  │ D70                                    │
+Segment-to-block  │ 4 x M20 per segment end                │ ring turns 360/n deg per node
+Hip shoe-to-block │ 2 x M16                                │ shell module owns the shoe
+Anchor coupling   │ sleeve + pin or thread, tensile rated  │ class N60 / N100 / N150 / N250 kN
+Skirt attachment  │ bolt-on fin, trimmed per wind class    │ extension strip allows WC upgrade in
+                  │                                        │ place
+Spare provision   │ second sleeve boss on N100+ blocks     │ allows 2 anchors/node retrofit
+
+3.4 Material tier matrix (same interfaces, performance classes)
+
+Module            │ T1 Proto                 │ T2 Advanced               │ T3 Apex (target)
+──────────────────┼──────────────────────────┼───────────────────────────┼──────────────────────────
+P1 ring segment   │ recycled RHS, galvanised │ basalt-fibre geopolymer / │ CNT-polymer composite box
+                  │                          │ BFRP box + steel node     │ [TRL-gated]
+P2 anchor         │ recycled steel,          │ steel + duplex polymer-   │ steel core + wear-barrier
+                  │ galvanised               │ ceramic coat              │ coating
+P3 skirt fin      │ recycled steel sheet 4   │ GFRP/BFRP sheet 6 mm (no  │ same as T2
+                  │ mm                       │ corrosion)                │
+Shell facets      │ bamboo/FSC timber +      │ BFRP + hemp/mycelium      │ CNT / nano-diamond
+                  │ ferrocement              │ sandwich                  │ sandwich
+Shell mass target │ ~200 kg/m2               │ ~100 kg/m2                │ ~50 kg/m2
+Upgrade path      │ -> T2: swap shell, keep  │ -> T3: swap ring segments │ foundation never re-dug
+                  │ ring                     │ 1:1                       │
+
+T2 and T3 entries are performance targets written to the node interface class, not verified
+products. Ring-segment performance class: Mp >= 36 kN.m, node proof >= 90 kN uplift, bolt pattern
+per 3.3. A tier passes only by test against that class.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+4. DETAILED DRAWINGS
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+4.1 Drawing index
+
+Sheet │ File                        │ Content
+──────┼─────────────────────────────┼───────────────────────────────────────────────────────────────
+1/3   │ AEQUCONE_drawing_set.pdf p1 │ R-12 elevation, section A-A, plan, notes (to scale)
+2/3   │ AEQUCONE_drawing_set.pdf p2 │ node plan/section, parts schedule, 6-step assembly, size
+      │                             │ ladder, selection chart
+3/3   │ AEQUCONE_drawing_set.pdf p3 │ study evidence: shapes, cone sweep, raft vs kit, Monte Carlo,
+      │                             │ flotation
+
+4.2 Elevation, R-12 (schematic)
+
+┌─ ELEVATION (view on facet S12) ───────────────────────────────────────────────────────────────────
+│
+│                                  ▲                       ◄ apex +5.98 m above grade
+│                                ╱╱│╲╲
+│                              ╱╱ ╱│╲ ╲╲                   ◄ 45 deg roof, 12 flat facets
+│                            ╱ ╱ ╱ │ ╲ ╲ ╲                 ◄ hip ribs land on the 12 nodes
+│                          ╱ ╱   ╱ │ ╲   ╲ ╲
+│                        ╱  ╱   ╱  │  ╲   ╲  ╲
+│                      ╱  ╱     ╱  │  ╲     ╲  ╲
+│                    ╱───╱─────╱───│───╲─────╲───╲         ◄ knee line +2.25 m
+│                    │   │     │┌─────┐│     │   │
+│                    │   │     ││     ││     │   │         ◄ knee wall: 12 flat panels 2.0x2.1
+│                    │   │     ││DOOR ││     │   │         ◄ clear 2.10 m; door 1.0 x 2.0
+│                    │   │     ││     ││     │   │
+│              ══════╧═══╧═════╧═══════╧═════╧═══╧══════   ◄ ring top = FFL +0.15 m
+│              ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ◄ external grade 0.00
+│                    ┊         ┊       ┊         ┊         ◄ skirt fin 1.04 m (hidden)
+│                    ┊         ┊       ┊         ┊         ◄ anchors >= 3.0 m (hidden)
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+4.3 Section A-A and plan
+
+┌─ SECTION A-A (through opposite nodes, not to scale below grade) ──────────────────────────────────
+│
+│                                    ▲ apex cap (compression ring / vent lantern option)
+│                                 ╱  │  ╲
+│                              ╱ hip rib  ╲                    shell: flat facets, 45 deg
+│                           ╱      │      ╲
+│                        ╱─────────┼─────────╲   ◄ knee line
+│                        ║         │         ║   ◄ knee wall 2.10 m clear
+│                        ║   living volume    ║
+│         ═══════════════╩═════════════════════╩═══════════  ring + node block; FFL +0.15
+│         ░░░░ gravel pad ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  grade 0.00
+│                        ┃                     ┃   ◄ skirt fin 1.04 m (WC4)
+│                        ┃    ┌ ─ ─ ─ ─ ─ ┐     ┃
+│                        ┃    core cell (opt.)  ┃   ◄ only if water table >= 1.5 m below floor
+│                        ┃    └ ─ ─ ─ ─ ─ ┘     ┃
+│                        ┃                     ┃   ◄ anchor shaft, embed >= 12 helix dia
+│                       ═╋═                   ═╋═  ◄ helices D200 x2 (class A1)
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+┌─ PLAN AT FFL (S12 = door facet) ──────────────────────────────────────────────────────────────────
+│
+│                            N7 ●━━━━━━━━━━● N6
+│                             ╱ ╲        ╱ ╲
+│                        N8 ●    ╲      ╱    ● N5          ● node + screw anchor (12)
+│                          ┃      ╲    ╱      ┃            ━ ring segment S1..S12, chord 2.000
+│                    N9 ●          ╲  ╱         ● N4       ╱ hip rib to apex
+│                      ┃            ╲╱           ┃
+│                      ┃     ────────●────────   ┃         across flats 7.46 m, nodes 7.73 m
+│                   N10 ●            ╱╲          ● N3      floor 44.8 m2 (polygon)
+│                        ┃          ╱  ╲        ┃
+│                     N11 ●       ╱      ╲      ● N2
+│                             ╲  ╱          ╲  ╱
+│                            N12 ●━━━━━━━━━━● N1
+│                                  S12  DOOR 1.0 m
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+4.4 Node assembly (exploded)
+
+┌─ NODE N (P1 x2, node block, P2, P3, P4) ──────────────────────────────────────────────────────────
+│
+│                        hip shoe (shell module) ─┐
+│                                              ╔══╧══╗
+│         segment A ───────────────────────────╢NODE ╟────────────────────────── segment B
+│         RHS 150x100x6   4 x M20 each end     ║BLOCK║     4 x M20 each end     RHS 150x100x6
+│                                              ╚══╤══╝
+│                                                 │ sleeve D70 (spare boss on N100+)
+│                           skirt fin ─ ─ ─ ─ ─ ─ ┃ ─ ─ ─ ─ ─ ─ skirt fin  (bolt-on, 4 mm)
+│                                                 ┃ P2 anchor shaft, torque-logged
+│                                               ══╋══ helix D200 (x2)
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+5. MANUFACTURING SPECIFICATION
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+5.1 Process sequence with checkpoints (T1)
+
+Part │ Step │ Process                                       │ Checkpoint
+─────┼──────┼───────────────────────────────────────────────┼───────────────────────────────────────
+P1   │ 1    │ cut RHS 150x100x6 to 2000 chord, square ends, │ length +/-2 mm in jig, 100%
+     │      │ weld end plates                               │
+P1   │ 2    │ fabricate node block 260x260x12 box, bore     │ go/no-go bore + bolt pattern, 100%
+     │      │ sleeve D70                                    │
+P1   │ 3    │ hot-dip galvanise (>= 85 um) or duplex coat   │ coating thickness 5 readings per batch
+P2   │ 1    │ cut shaft, weld drive coupling, press and     │ helix pitch/diameter +/-3 mm, 100%
+     │      │ weld 2 plate helices D200                     │
+P2   │ 2    │ galvanise; proof torque on 1 in 50 to 1.25 x  │ no yield, no weld crack
+     │      │ rating                                        │
+P3   │ 1    │ shear 4 mm sheet 2000 x 1040, form stiffening │ flatness, hole pitch, 100%
+     │      │ flange, punch                                 │
+P4   │ 1    │ M20 8.8 galvanised sets, shims, torque tags,  │ kit count check against R-12 list
+     │      │ QR labels                                     │
+
+5.2 Equipment and local-first alternatives
+
+Operation     │ Standard                       │ Local alternative
+──────────────┼────────────────────────────────┼───────────────────────────────────────────────────
+Cut / drill   │ plasma or laser, drill line    │ band saw, magnetic drill, hand grinder
+Weld          │ MIG with jigs                  │ stick welding with simple fixtures
+Coat          │ regional hot-dip galvaniser    │ cold-zinc + paint, shorter life, inspect at 5 yr
+Helix forming │ hydraulic press and die        │ forge / cut-and-twist plate on a former
+Anchor drive  │ mini-excavator with drive head │ portable hydraulic or electric drive, 3-6 kN.m [A]
+
+5.3 Quality control and acceptance
+
+Where   │ Check                           │ Accept                          │ Frequency
+────────┼─────────────────────────────────┼─────────────────────────────────┼───────────────────────
+Factory │ segment length, bore, bolt      │ tolerances in 2.9               │ 100%
+        │ pattern                         │                                 │
+Factory │ weld visual; magnetic particle  │ no cracks / undercut            │ 100% / 10%
+Factory │ coating thickness               │ >= 85 um mean, no bare spots    │ every batch
+Site    │ anchor installation torque and  │ >= class torque, depth >= 12    │ 100%, logged
+        │ depth                           │ helix dia                       │
+Site    │ anchor proof load               │ 1.2 x Qreq or local code, no    │ 2 per site minimum [A]
+        │                                 │ creep                           │
+Site    │ ring level, chords, bolt torque │ tolerances 2.9; tagged          │ 100%
+Record  │ tamper-evident install log      │ no tag = no occupancy           │ per unit
+        │ (append-only)                   │                                 │
+
+5.4 Production time model [A]
+
+Part                    │ Touch h each │ Qty R-12 │ Touch h per kit
+────────────────────────┼──────────────┼──────────┼────────────────
+P1 segment + node block │ 0.80         │ 12       │ 9.6
+P2 anchor               │ 0.50         │ 12       │ 6.0
+P3 skirt fin            │ 0.20         │ 12       │ 2.4
+P4 hardware set         │ 0.05         │ 12       │ 0.6
+
+One R-12 kit = 18.6 touch hours. A 2-person cell on one 8 h shift makes about 0.86 kits, roughly 198
+kits per year (230 shifts); a 4-person cell about 396. Galvanising is outsourced and not counted.
+
+5.5 Site installation procedure (R-12, 3-person crew)
+
+Step │ Action                                      │ Checkpoint                              │ Hours
+─────┼─────────────────────────────────────────────┼─────────────────────────────────────────┼──────
+0    │ site gate sign-off (geotech, water table,   │ documents filed before mobilising       │ -
+     │ class)                                      │                                         │
+1    │ set out centre + 12 nodes, level compacted  │ radius +/-10 mm                         │ 1.0
+     │ gravel pad                                  │                                         │
+2    │ drive 12 anchors, log torque and depth, tag │ torque >= 2.6 kN.m each; refusal = stop │ 4.0
+3-4  │ seat segments on sleeves, bolt, shim, close │ level +/-3 mm per 2 m                   │ 2.0
+     │ and torque ring                             │                                         │
+5    │ bolt skirt fins, backfill in 200 mm lifts,  │ compaction, verticality                 │ 1.0
+     │ plate test                                  │                                         │
+6    │ erect shell (shell module, not counted)     │ hip shoes seat without force            │ -
+     │ TOTAL foundation                            │ loadable immediately (no cure)          │ 8.0
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+6. MATERIALS SPECIFICATION
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+6.1 Bill of materials, R-12, T1
+
+┌─ BOM T1 ─────────────────────────────────────────────────────────────────────────────────────────
+│
+│  Part            │ Specification                                     │ Qty │ kg each │ kg total
+│  ────────────────┼───────────────────────────────────────────────────┼─────┼─────────┼─────────
+│  P1 ring segment │ recycled RHS 150x100x6 x 2.0 m + node block       │ 12  │ 56.8    │ 682
+│  P2 anchor A1    │ 60 kN class, >= 3.0 m, 2 helices D200, galvanised │ 12  │ 20.0    │ 240
+│  P3 skirt fin    │ 4 mm sheet 2000 x 1.04 m                          │ 12  │ 74.9    │ 898
+│  P4 hardware     │ M20 8.8 sets, shims, tags                         │ 12  │ 5.0     │ 60
+│  TOTAL           │                                                   │     │         │ 1881
+│
+│  Shell BOM is the shell module: ~117 m2 of facets at the tier areal mass (3.4); out of scope of
+│  this foundation-first run.
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+6.2 Sustainability documentation (indicative [A5])
+
+Item               │ Cast raft       │ Kit, recycled steel      │ Kit, virgin steel
+───────────────────┼─────────────────┼──────────────────────────┼─────────────────────────
+Mass               │ 34.3 t concrete │ 1.88 t steel             │ 1.88 t steel
+Embodied CO2e      │ 5.83 t          │ 1.13 t                   │ 3.57 t
+Ratio to raft      │ 100%            │ 19%                      │ 61%
+Ground left behind │ concrete mass   │ nothing after extraction │ nothing after extraction
+Time to full load  │ ~10 days [A]    │ immediate                │ immediate
+
+Carbon-negative is NOT claimed: it holds only for the wider displacement accounting of the
+programme, which this run cannot verify. Require recycled-steel content and EPDs: the steel source
+moves the result about as much as the design change itself (1.1 vs 3.6 t against a 5.8 t raft).
+
+6.3 Sourcing options
+
+Setting             │ Steel                    │ Anchors                  │ Note
+────────────────────┼──────────────────────────┼──────────────────────────┼─────────────────────────
+Industrial region   │ scrap-based RHS, local   │ screw-anchor makers      │ qualify by test, not
+                    │ galvaniser               │ (generic helix)          │ brand
+Rural / low-capital │ welded box from scrap    │ pipe + plate helices,    │ proof-test each batch;
+                    │ plate and angle          │ local press              │ de-rate class
+Remote / island     │ containerised kit from   │ same                     │ ~10 kits per 20 ft
+                    │ regional node            │                          │ container [A]
+
+Substitution rule: any box section with Mp >= 36 kN.m, wall >= 6 mm and the 3.3 bolt pattern
+qualifies as P1; any anchor passing the torque-capacity test to its class qualifies as P2. Specify
+performance, never brand.
+
+6.4 End-of-life pathways
+
+Material          │ Pathway                                    │ Recovery target [A]
+──────────────────┼────────────────────────────────────────────┼────────────────────────────────────
+P1/P3 steel       │ unbolt; inspect and re-use, else scrap     │ >= 60% re-used, rest recycled
+P2 anchors        │ reverse-torque extraction; cut and leave   │ >= 90% of foundation mass (gate V8)
+                  │ only if stuck                              │
+P4 hardware       │ sort and re-use or recycle                 │ >= 80%
+Gravel / backfill │ leave or re-use on site                    │ 100% inert
+Shell T1          │ ferrocement crushed as aggregate; timber   │ tier dependent
+                  │ re-used                                    │
+Shell T2/T3       │ manufacturer take-back and re-pulp / re-   │ tier dependent, unverified
+                  │ process                                    │
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+7. LIFECYCLE DOCUMENTATION
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+7.1 User manual outline
+
+• What the unit is and is not: design wind class label (never "proof"); occupancy rules; evacuation
+  guidance
+• Record pack: torque log, as-built levels, class label plate, inspection ports, spare-boss
+  locations
+• Do-not list: no excavation within 1.5 m of the ring; no drilling or cutting of hip ribs; no
+  overhangs or lean-tos on the shell
+• After any event: gust >= 80% of class, flood, earthquake, excavation nearby -> inspect before
+  reuse
+
+7.2 Maintenance schedule
+
+Interval     │ Task                                                          │ Who
+─────────────┼───────────────────────────────────────────────────────────────┼──────────────────────
+Annual       │ visual: ring, nodes, bolts, skirt exposure, drainage, berm    │ owner
+5 years      │ torque re-check 10% of bolts; level survey; sleeve inspection │ trained technician
+10 years     │ excavate one node to inspect coating and anchor head; recoat  │ technician
+             │ if needed                                                     │
+Event driven │ full node and level inspection; replace deformed parts        │ technician + engineer
+
+7.3 Repair and upgrade paths
+
+• Segment or node block: unbolt, replace 1:1 (tier-agnostic interface).
+• Anchor: unscrew and replace, or add a second anchor through the spare boss on N100+ blocks.
+• Wind-class upgrade WC2 -> WC4: bolt on skirt extension strips; swap anchors up one class.
+• Tier upgrade: swap shell facets (T1 -> T2), then ring segments 1:1 (T2 -> T3); foundation never
+  re-dug.
+• Coating repair: wire-brush, cold zinc, record in the log.
+
+7.4 End-of-life disassembly
+
+1. Strip shell facets by tier. 2. Remove skirt fins and backfill. 3. Unbolt ring segments. 4.
+   Reverse-torque each anchor, log depth.
+5. Sort steel; re-use or recycle. 6. Reinstate ground; no concrete remains.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+8. SCALE PLANNING
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+8.1 Prototype programme
+
+Stage    │ Tests / build                                                             │ Closes gate
+─────────┼───────────────────────────────────────────────────────────────────────────┼──────────────
+P0 bench │ anchor pull-out/torque in 2 soils; node proof to 1.5 x class; segment     │ V2, V3 (part)
+         │ bending; skirt lateral cyclic                                             │
+P0 wind  │ 1:25 wind-tunnel models: 45 deg cone-on-knee vs dome, tornado-like vortex │ V1
+         │ if available; CFD cross-check                                             │
+P1 unit  │ instrumented R-12: anchors, ring strain, level; install-time study        │ V3, V4 start
+P2 pilot │ 10 units over 3 ground types incl. one extraction at 12 months            │ V6, V8
+
+8.2 Small batch to mass production
+
+Level  │ Units / yr │ Fabrication                                         │ Install
+───────┼────────────┼─────────────────────────────────────────────────────┼─────────────────────────
+Pilot  │ 10-50      │ 1 workshop, 2-person cell, jigs                     │ 1 crew
+Series │ 500-2,000  │ 3 nodes x 4-person cells (~396 kits/yr each)        │ 10 crews, trained
+Mass   │ 10,000+    │ regional nodes, outsourced galvanising, kit packing │ franchised crews + audit
+
+8.3 Distribution model
+
+Open drawings and the performance classes (3.3, 3.4) are the product; fabrication is local-first.
+Kits ship by container (~10 R-12 per 20 ft [A]). Each region certifies against its own code route;
+install logs are append-only so audit does not depend on any one vendor.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+9. OPTIBEST VERIFICATION REPORT
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+9.1 Studies conducted
+
+#  │ Study                 │ Finding
+───┼───────────────────────┼────────────────────────────────────────────────────────────────────────
+S1 │ Code basis            │ ASCE 7-22 Ch.32 adds tornado loads for Risk Cat III/IV (~EF2 or less);
+   │                       │ ICC 500/FEMA P-361 shelters: 250 mph, 15 lb 2x4 at 100 mph walls / 67
+   │                       │ mph roof, GCpi +/-0.55
+S2 │ Shape, equal function │ pure steep cone dominated; cone-on-knee 45 deg wins most weight space;
+   │                       │ dome rival; flips with aero inputs
+S3 │ Foundation types      │ raft 34 t vs kit 1.9 t; precast-rib systems patented; shell footings:
+   │                       │ evidence mixed; spun-cast unsuited to shells
+S4 │ Anchor method         │ Qult = Kt x T; published Kt 23-33 1/m (tension lower); AC358 depth >=
+   │                       │ 12 helix dia; torque = built-in QA
+S5 │ Model validation      │ cone vs drum ratios 0.50 / 0.33 match closed form; Cf 0.5-0.6 per code
+   │                       │ round-structure tables
+S6 │ Uncertainty           │ 20,000 draws; anchor utilisation P95 0.59, P(>1) = 0.000; shape choice
+   │                       │ assumption-sensitive
+S7 │ Below / above ground  │ flotation limit 1.5 m; berm to knee: base shear 48%, moment 75%
+S8 │ Prior art             │ radial-rib precast foundation patent families; helical basics old; FTO
+   │                       │ gate V5
+S9 │ Dome tornado evidence │ vendor-sourced anecdotes (concrete domes surviving strong tornadoes);
+   │                       │ not independent; not relied on
+
+9.2 Seven dimensions: evidence and status
+
+Dimension       │ Evidence                                │ Status
+────────────────┼─────────────────────────────────────────┼─────────────────────────────────────────
+Functional      │ R-12 WC4: anchor util P50 0.28; skirt   │ concept met; V1-V3
+                │ 1.04 m; flotation rule                  │
+Efficiency      │ steel 5.5% of raft mass; CO2e 19-61%;   │ met (indicative)
+                │ S/Au 2.59 vs 3.59                       │
+Robustness      │ capacity design; anchors 3.4x demand;   │ concept; V3 connections
+                │ failure order 3.2                       │
+Scalability     │ n = 8..48, one segment, anchors A1-A3   │ foundation met; shell n >= 24 needs
+                │                                         │ analysis
+Maintainability │ bolted, inspection ports, spare boss,   │ met
+                │ replaceable skirt                       │
+Innovation      │ integration: constant-chord ring +      │ partial, honestly
+                │ torque-as-QA + demountable skirt; parts │
+                │ are known                               │
+Elegance        │ 4 foundation part families (P1-P4), 1   │ met
+                │ tooling set, 1 segment section          │
+
+9.3 Iteration history with enhancement deltas
+
+It │ Change                        │ Mass t │ CO2e t │ Tooling │ Steps │ Days │ Margin │ Demount %
+───┼───────────────────────────────┼────────┼────────┼─────────┼───────┼──────┼────────┼──────────
+0  │ cast gravity raft + cone      │ 34.27  │ 5.83   │ 6       │ 9     │ 10.0 │ 1.00   │ 0
+1  │ ring + screw anchors          │ 1.88   │ 1.13   │ 6       │ 5     │ 1.0  │ 1.00   │ 90
+2  │ constant-chord segment        │ 1.88   │ 1.13   │ 1       │ 5     │ 1.0  │ 1.00   │ 90
+3  │ skirt fin carries sliding     │ 1.88   │ 1.13   │ 1       │ 5     │ 1.0  │ 1.00   │ 90
+4  │ anchor classes, x1.2 built in │ 1.88   │ 1.13   │ 1       │ 5     │ 1.0  │ 3.39   │ 90
+
+It 5: shell geometry │ M kN.m │ Hold-down kN │ S/Au │ H m
+─────────────────────┼────────┼──────────────┼──────┼─────
+pure 60 deg cone     │ 436    │ 261          │ 3.59 │ 8.3
+45 deg on 2.1 m knee │ 225    │ 98           │ 2.59 │ 5.7
+delta                │ -48%   │ -63%         │ -28% │ -32%
+
+Definitions: Tooling = distinct formwork/jig sets for the 6-size ladder. Steps = field operations.
+Days = to full design load (raft: 3 d work + 7 d to 70% strength [A]). Margin = installed class
+capacity / demand (>1 = reserve). Demount % = recoverable by mass [A, gate V8]. I1, I2, I4 are
+measured on R-12 at WC4; I3 is design logic (it avoids extra anchors for sliding) and changes none
+of these metrics.
+
+9.4 Plateau verification (five methods)
+
+Method 1  Multi-attempt enhancement seeking (7 attempts; threshold 10% = model noise floor)
+
+Attempt                   │ d Hold-down │ d Steel │ d Install │ d Height │ Verdict
+──────────────────────────┼─────────────┼─────────┼───────────┼──────────┼──────────────────────────
+alpha 40                  │ -7%         │ -2%     │ 0%        │ -10%     │ inside noise; suction
+                          │             │         │           │          │ data thin; not adopted
+alpha 50                  │ +8%         │ +2%     │ 0%        │ +12%     │ worse on every metric
+chord 1.5m, n=16          │ -1%         │ +8%     │ +25%      │ 0%       │ worse: more steel, more
+                          │             │         │           │          │ time
+hub + n/2 spokes          │ 0%          │ +28%    │ 0%        │ 0%       │ worse: more steel, no
+                          │             │         │           │          │ gain (weak-soil option
+                          │             │         │           │          │ only)
+2 anchors/node            │ 0%          │ +13%    │ +50%      │ 0%       │ worse: more steel/time;
+                          │             │         │           │          │ demand already under A1
+lighter shell sigma=150   │ +43%        │ 0%      │ 0%        │ 0%       │ tier-driven trade-off:
+                          │             │         │           │          │ demand up, material down
+APC-vented lantern        │ -100%       │ 0%      │ 0%        │ 0%       │ CONDITIONAL vector: needs
+GCpi=0.18                 │             │         │           │          │ ICC 500 vent area, rated
+                          │             │         │           │          │ vents
+
+Result PASS (scoped): no unconditional gain above 10%. Anti-gaming: the first pass DID find a real
+gap (pure cone dominated), so the second-angle analysis (dome comparison, 12-case assumption flip,
+Monte Carlo) was run before claiming a plateau.
+
+Method 2  Independent perspectives
+
+Perspective  │ Finding                                   │ Mitigation / status
+─────────────┼───────────────────────────────────────────┼──────────────────────────────────────────
+User         │ tall interior volume; framed openings in  │ knee wall gives full floor; rated opening
+             │ facets                                    │ frames; usability test at P1
+Manufacturer │ galvaniser access, helix forming          │ local alternatives 5.2; qualify by test
+Maintainer   │ buried anchors hard to inspect            │ sleeve ports; excavate 1 node / 10 yr;
+             │                                           │ replaceable parts
+Adversary    │ skipped torque log, short anchors,        │ no tag = no occupancy; class labels; 2%
+             │ "tornado-proof" marketing                 │ audit; append-only log
+Planet       │ virgin steel erodes the carbon case       │ require recycled content + EPDs; no
+             │                                           │ cement in ground
+
+Result CONDITIONAL: every weakness has a procedure, none is field-proven yet.
+
+Method 3  Alternative architectures
+
+Architecture                    │ Measured / known                │ Verdict
+────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────
+A cast raft + cone (baseline)   │ 34 t, 5.8 t CO2e, ~10 d to      │ baseline
+                                │ load, not demountable           │
+B precast radial-rib (turbine-  │ heavy concrete, crane, active   │ rejected: weight, patents
+style)                          │ patent families                 │
+C dome on AEQUBASE              │ lower moment; double-curved     │ equivalent; alt shell; same kit
+                                │ fabrication                     │
+D anchors only, no ring         │ no continuous tie, no skirt, no │ rejected: path discontinuity
+                                │ levelling datum                 │
+E earthbag dome + ballast       │ cheapest, heavy; WC1-WC2; slow  │ equivalent for low-class, low-
+                                │ build                           │ tech
+F conical shell footing         │ lab results disagree (+15% load │ rejected as baseline; option for
+                                │ vs ~half Ngamma)                │ gravity sites
+
+Result PASS: AEQUBASE is superior or equal with less complexity for WC2-WC4; (E) is the honest low-
+tech equal at WC1.
+
+Method 4  Theoretical limit analysis (R-12, WC4)
+
+Parameter    │ Minimum                 │ Installed   │ Gap explanation
+─────────────┼─────────────────────────┼─────────────┼──────────────────────────────────────────────
+Anchor steel │ ~71 kg (3 kN/kg)        │ 240 kg      │ practical minimum class + 1 anchor per node
+             │                         │             │ (robustness): immutable
+Skirt steel  │ 898 kg (passive demand) │ 898 kg      │ equals minimum for this soil; 48% of steel:
+             │                         │             │ vector V-2
+Segment Zp   │ 15 cm3                  │ 143 cm3     │ handling, bolting, torsion, corrosion: partly
+             │                         │             │ immutable; T2/T3 lighter
+Install time │ ~2 h (12 drives)        │ 8 h         │ set-out, QA, backfill: mechanisation can trim
+Cone Cf      │ 0.25-0.35 (dome-like)   │ 0.6 assumed │ unverified: gate V1
+
+Result PASS: all gaps explained as immutable or logged as vectors.
+
+Method 5  Fresh perspective
+
+Re-read as a stranger: the brief asked for an optimal framework starting from foundations. The
+answer separates invariants from conditionals, corrects the pure-cone intuition with numbers, and
+gives a kit that is one segment, one node, a few anchor classes. It is the best this evidence
+supports; it is not proven optimal, and V1 can still flip the shell. Result PASS with that
+qualification.
+
+9.5 Uncertainty
+
+Quantity (R-12 WC4)           │ P5   │ P50  │ P95
+──────────────────────────────┼──────┼──────┼─────
+Base shear kN                 │ 79   │ 130  │ 177
+Moment kN.m                   │ 172  │ 282  │ 386
+Breach uplift kN              │ 115  │ 242  │ 356
+Anchor tension per node kN    │ 1.3  │ 14.6 │ 26.5
+Anchor utilisation (class A1) │ 0.02 │ 0.28 │ 0.59
+
+Sampled: exposure B/C/D, Cf 0.5-0.8, cone lift 0.05-0.5, shell mass +/-15%, true Kt 15-33 1/m, GCpi
+0.18 or 0.55. The uplift spread (about +/-50%) is why differences below 10% are not claimed as
+enhancements.
+
+9.6 Open verification gates
+
+Gate │ What closes it                                │ Pass criterion
+─────┼───────────────────────────────────────────────┼──────────────────────────────────────────────
+V1   │ wind tunnel / CFD, incl. vortex loading: Cf,  │ CL(ext) <= 0.5 and Cf <= 0.8, else default
+     │ lift, peak local Cp                           │ shell becomes dome
+V2   │ site geotech + anchor load tests              │ measured Kt >= 23 1/m, else de-rate class
+     │ (AC358-style)                                 │
+V3   │ shell + node structural analysis and tests;   │ node proof >= 1.5 x class; buckling OK
+     │ envelope tests if shelter claimed             │
+V4   │ soil corrosivity and coating life data        │ 50-yr life by corrosivity class
+V5   │ patent freedom-to-operate review (attorney)   │ no blocking claims, or design-around
+V6   │ seismic and liquefaction site gate            │ site class accepted
+V7   │ flood, groundwater, berm drainage             │ flotation margin >= 1.1
+V8   │ extraction and re-use trials                  │ >= 90% by mass recoverable
+V9   │ independent peer review + licensed structural │ signed off per jurisdiction
+     │ engineer; local code route                    │
+
+9.7 Known limitations and enhancement vectors
+
+• Sectional drag model: no vortex shedding, no tornado translation/vertical flow, no dynamic
+  response. Shell buckling and ovalling not analysed.
+• Soil generic; cost, labour and times are estimates [A]; EFE "renewable" only partly met by a metal
+  foundation.
+• Shape ranking depends on assumed lift coefficients: dome wins if the cone is aerodynamically
+  pessimistic.
+• T2/T3 are performance targets, unverified.
+• V-1 APC-vented lantern: in the model GCpi 0.18 removes net hold-down; needs ICC 500 vent area and
+  debris-rated vents.
+• V-2 lighter skirt: battered anchors or partial-height skirt. V-3 composite ring (T2) for mass. V-4
+  hub-and-spoke only for weak soils.
+• V-5 fewer, larger nodes at n >= 36. V-6 optional berm module with drainage design.
+
+9.8 Prior art and patent register (not legal advice; gate V5)
+
+• Precast radial-rib / pedestal-section foundations for wind turbines are in granted families,
+  examples US10876269, US10934679, US10968592, US11795653, US10724204, EP3845712A1 (status and
+  claims not verified here). AEQUBASE avoids integral ribs and concrete-specific claims.
+• Screw anchors are old art; manufacturer-specific helix profiles may be patented: specify generic
+  plate helices.
+• Conical shell footings are academic literature; spun-cast pole splices carry patents (e.g.
+  US5285614). Neither is used.
+
+9.9 Sources consulted
+
+• ASCE 7-22 Chapter 32 tornado loads: gaf.com building-science blog on ASCE 7-22 tornado loads;
+  enr.com/articles/53126-tornado-resistant-building-design-premieres-in-asce-7-22
+• Safe room criteria: flash.org/mitigation/install-a-safe-room; icfmag.com 2023/08 why ICF safe
+  rooms provide the best protection; FEMA P-361 / ICC 500 summaries
+• ICC 500 pressure coefficients and peer review: structuremag.org nssaicc-500-2014-storm-shelter-
+  standard-structural-provisions and structural-design-and-coordination-of-icc-500-tornado-shelters
+• Shell footings: ijert.org experimental-study-on-conical-shell-footing; Geotechnique, flat vs
+  conical circular foundations on sand (emerald.com jgeot 58/10/781); koreascience.or.kr
+  JAKO201432252667540
+• Helical torque correlation: geoengineer.org history-of-torque-correlation-kt-factor;
+  commercial.supportworks.com helical piles design examples; hubbell origin of the Kt factor
+• Conical roof pressures: grain-bin wind-tunnel study (academia.edu 19420957); CFD of a conical-
+  roofed low-rise building (researchgate 356774855); structville.com how-to-apply-wind-load-on-
+  roofs; round-structure Cf: engineersedge wind-loading-chimney
+• Patents: patents.google.com US10876269, US10934679; dome survivability claims: monolithic.org
+  (vendor source); spun concrete: dorner.at betonblog
+
+9.10 Reproduce
+
+┌─ COMMANDS ────────────────────────────────────────────────────────────────────────────────────────
+│
+│  $ python3 aequcone_model.py      # regenerates results.json (seeded)
+│  $ python3 draw_sheets.py          # regenerates the drawing set
+│  $ python3 build_odf.py            # regenerates this document from results.json
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+10. CERTIFICATION (SCOPED)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+╔═ EFE OPTIBEST ENGINEERING CERTIFICATION - SCOPED ═════════════════════════════════════════════════
+║
+║  Design      : AEQUCONE v0.1 / AEQUBASE foundation kit
+║  Purpose     : one parametric, scale-invariant, tier-agnostic axisymmetric shell framework on a
+║                mass-producible demountable ring foundation
+║  Scale       : Global framework; household-community units (n = 8..48)
+║  Iterations  : 5 design iterations after baseline, 7 plateau attempts, 12-case assumption flip,
+║                20,000-draw Monte Carlo
+║
+║  EFE FILTER  : Sustainable PASS(cond) | Renewable PARTIAL | Accessible PASS(cond) | Open
+║                PASS(cond, V5) | Local-first PASS | Circular PASS(target)
+║                Durable CONDITIONAL (V4)
+║  DIMENSIONS  : Functional met(concept) | Efficiency met(indicative) | Robustness concept |
+║                Scalability met(foundation)
+║                Maintainability met | Innovation partial | Elegance met
+║  PLATEAU     : M1 PASS | M2 CONDITIONAL | M3 PASS | M4 PASS | M5 PASS (qualified)
+║  OPEN GATES  : V1 wind, V2 geotech/anchor tests, V3 structure, V4 durability, V5 patents, V6
+║                seismic, V7 flood, V8 EOL, V9 peer review
+║  DELIVERABLES: 9-section package, 3-sheet drawing set, reproducible model
+║
+║  STATUS: ◈ CONCEPT PLATEAU (CONDITIONAL). NOT STRUCTURALLY CERTIFIED. The PREMIUM stamp is
+║  withheld until V1-V3 close.
+║  If any gate fails, the plateau claim for the affected element is withdrawn and this document is
+║  revised.
+║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+APPENDIX A: CALCULATION BASIS (CHECKABLE BY HAND)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ FORMULAS ────────────────────────────────────────────────────────────────────────────────────────
+│
+│  q(z)   = 0.613 Kz V^2   Kz = 2.01 (max(z,4.57)/274.32)^(2/9.5)   [N/m2, V in m/s]
+│  F, M   = integral q Cf w dz ;  integral q Cf w z dz         (w = silhouette width at height z)
+│  U      = q(H) (CL + GCpi) pi R^2        Ws = sigma g S        P = 0.9 (Ws + Wring) - U
+│  T/node = max(0, (2M/R - P)/n)           Qreq = 1.2 T          torque = Qreq / Kt
+│  skirt  : 0.5 gamma Kp d^2 (2R) 0.5 = F   ->  d = sqrt(2F / (gamma Kp 2R 0.5))
+│  Mseg   = T L / 8        ring thrust  T_ring = w R^2 / (2 sin(alpha))
+│  raft   : W >= (U + max(M/Rf, F/mu)) / 0.9
+│
+└───────────────────────────────────────────────────────────────────────────────────────────────────
+
+R-12, WC4 step           │ Value
+─────────────────────────┼───────────────────────────────
+H (circumscribed cone)   │ 5.96 m
+Kz(H)                    │ 0.898
+q(H)                     │ 6874 Pa
+F, M (integrated)        │ 122 kN, 264 kN.m
+U = q (0.25+0.55) pi R^2 │ 258 kN (matches model 258)
+Ws (200 kg/m2)           │ 230 kN
+P                        │ -40 kN (negative = net uplift)
+T per node               │ 14.8 kN
+Qreq = 1.2 T             │ 17.7 kN -> A1 60 kN
+torque                   │ 2.61 kN.m
+skirt d                  │ 1.04 m
+Mseg                     │ 3.7 kN.m
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+APPENDIX B: VISUAL PROMPTS (T1 / T2 / T3)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+T1 PROTO
+
+Documentary photograph of a twelve-sided conical-roof shelter, 7.7 m across, 45-degree roof of
+twelve flat ferrocement facets over a 2.1 m knee wall, standing on a ring of galvanised recycled-
+steel box-section segments with bolted node blocks at twelve points, skirt-fin trench half
+backfilled; two workers drive a screw anchor with a portable hydraulic head beside a torque-log
+tablet; dry savanna at golden hour, long shadows; Canon EOS R5, 24-70mm f/2.8 at 35mm, f/8, 1/250 s,
+ISO 100, 5600 K, polariser, tripod at 1.4 m, low three-quarter angle, ring in foreground on the
+lower third, Kodak Portra 400 emulation, 3:2, 300 DPI, TIFF.
+
+T2 ADVANCED
+
+Architectural photograph of the same twelve-facet shelter in basalt-fibre composite: dark basalt-
+grey ring segments with exposed M20 bolt patterns, BFRP and hemp sandwich facets in a matte natural-
+fibre finish, vented apex lantern, coastal dunes under soft overcast light; Sony A7R V, 24mm tilt-
+shift at f/11, 1/125 s, ISO 64, 6000 K, graduated ND filter, tripod, level horizon, symmetrical
+frontal composition on the door facet, Fujifilm Pro 400H emulation, 4:5, 300 DPI, TIFF.
+
+T3 APEX
+
+Restrained futuristic photograph of the twelve-facet shelter at blue hour: CNT-polymer composite
+ring and facets with a faint diamond-coating sheen on the node blocks, warm interior light through a
+single rated opening, glassy wet ground reflecting the roof lines; Hasselblad X2D 100C, XCD 45mm f/4
+at f/9, 1/60 s, ISO 64, 4500 K, tripod, low centred angle, 1:1 crop, soft vignette, 300 DPI, TIFF.
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+                                  END OF DOCUMENT
+                    AEQUCONE v0.1 │ AEQUBASE │ 2026-10-10 │ CONCEPT PLATEAU (CONDITIONAL)
+════════════════════════════════════════════════════════════════════════════════════════════════════
